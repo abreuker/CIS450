@@ -23,15 +23,18 @@ public class Bandit : NPC, IHostile
         this.attackPower = attackPower;
     }
 
+
     //abstract methods needed to be implemented
+    public override void Die()
+    {
+        Debug.Log("A Bandit has died!");
+    }
+
     public void Attack()
     {
         Debug.Log("Bandit has attacked for " + attackPower + " points of damage!");
     }
 
-    public override void Die()
-    {
-        Debug.Log("A Bandit has died!");
-    }
+   
 
 }

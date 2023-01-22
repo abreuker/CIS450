@@ -14,7 +14,7 @@ public abstract class NPC
     public abstract void Die();
 
     //all NPCs can be attacked in the same way.
-    public float BeAttacked(float damage)
+    public void BeAttacked(float damage)
     {
         health--;
         Debug.Log("An NPC has taken damage! It now has " + (health) + " health!");
@@ -22,6 +22,5 @@ public abstract class NPC
         {
             this.Die();
         }
-        return health;
     }
 }

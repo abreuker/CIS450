@@ -26,15 +26,10 @@ public class QuestGiver : NPC, IFriendly, IImportant
         this.questCompleted = questCompleted;
     }
 
-    //needed getters and setters
+    //needed a setter
     public void SetQuestCompleted(bool questCompleted)
     {
         this.questCompleted = questCompleted;
-    }
-
-    public bool GetQuestCompleted()
-    {
-        return questCompleted;
     }
 
     //abstract methods needed to be implemented
@@ -49,14 +44,12 @@ public class QuestGiver : NPC, IFriendly, IImportant
             Debug.Log("A QuestGiver just died!");
         }
     }
-
-    public void Invincible()
-    {
-        Debug.Log("QuestGiver cannot die until quest is completed!");
-    }
-
     public void Talk()
     {
         Debug.Log("A QuestGiver is talking! They say: \"" + dialogue + "\"");
+    }
+    public void Invincible()
+    {
+        Debug.Log("QuestGiver cannot die until quest is completed!");
     }
 }

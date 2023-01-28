@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * PlayerMovement.cs
+ * Assignment 2 - Strategy Pattern
+ * This class controls the player movement and bowl behavior (strategy pattern).
+ */
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D body;
@@ -19,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //assign variables
         body = GetComponent<Rigidbody2D>();
         bowlBehavior = gameObject.AddComponent<CatchYellow>();
     }
@@ -26,9 +32,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //use bowl behavior to assign the accepted tag
         tagAccepted = bowlBehavior.Catch();
-        Debug.Log(tagAccepted);
 
+        //player movement
         horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
         {
@@ -36,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         }
         body.velocity = new Vector2(horizontal * movementSpeed, 0);
 
+        //changing the bowl behavior (and bowl color) through the strategy pattern.
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Destroy(GetComponent<BowlBehavior>());

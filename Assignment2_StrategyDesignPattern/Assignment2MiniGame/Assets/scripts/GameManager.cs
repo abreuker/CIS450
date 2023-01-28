@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/*
+ * Anna Breuker
+ * GameManager.cs
+ * Assignment 2 - Strategy Pattern
+ * This class manages the game. It's not a singleton but it still gets
+ * the job done.
+ */
 public class GameManager : MonoBehaviour
 {
     public int score;

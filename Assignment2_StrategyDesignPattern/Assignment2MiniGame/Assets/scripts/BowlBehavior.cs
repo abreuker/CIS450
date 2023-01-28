@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * BowlBehavior.cs
+ * Assignment 2 - Strategy Pattern
+ * This abstract class provides the method header for Catch().
+ */
 public abstract class BowlBehavior : MonoBehaviour
 {
-    /*Catch is supposed to make it so 1) you can only catch the fruit of
-     * the color of your bowl and 2) the color of your bowl changes. gonna 
-     * have to rewrite the signature i think...
-     */
-
     public abstract string Catch();
 }

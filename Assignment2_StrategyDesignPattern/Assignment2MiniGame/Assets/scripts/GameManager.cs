@@ -42,11 +42,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        //pause input
+        if (Input.GetKeyDown(KeyCode.P)) 
         {
             Pause();
         }
+
+        //update score text
         scoreText.text = "Score: " + score;
+
+        //check if game is won
         if (score >= 30)
         {
             GameOver();
@@ -58,6 +63,7 @@ public class GameManager : MonoBehaviour
             if (tutorialStep == 0)
             {
                 tutorialText.text = "Welcome to Fruit Fall!\nUse <- and -> (recomended) or A and D to move.";
+                //check if the player moved to the side of the screen
                 if (Mathf.Abs(player.transform.position.x) > 5)
                 {
                     tutorialStep = 1;
@@ -66,6 +72,7 @@ public class GameManager : MonoBehaviour
             else if (tutorialStep == 1)
             {
                 tutorialText.text = "To change the color of your bowl, press Q (red), W (orange) or E (yellow).";
+                //check if the player chaned the behavior of the bowl
                 if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.E))
                 {
                     tutorialStep = 2;
@@ -76,11 +83,13 @@ public class GameManager : MonoBehaviour
                 tutorialText.text = "To catch a falling fruit, the color of your basket must match the color of the fruit!";
                 isGameActive = true;
                 exampleImages.SetActive(true);
+                //start the fruit falling
                 if (!calledOnce)
                 {
                     StartCoroutine(SpawnFruits());
                     calledOnce = true;
                 }
+                //check if one fruit has been caught
                 if (score >= 1)
                 {
                     tutorialStep = 3;
@@ -89,6 +98,7 @@ public class GameManager : MonoBehaviour
             else if (tutorialStep == 3)
             {
                 tutorialText.text = "Great job!\nTo complete the tutorial, try catching "+ (5-score)+ " more!";
+                //check if the player got 5 points
                 if (score >= 5)
                 {
                     tutorialStep = 4;
@@ -98,20 +108,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //pause the game
     private void Pause()
     {
-        //isGameActive = false;
         Time.timeScale = 0;
         pauseScreen.SetActive(true);
     }
 
+    //unpause the game
     public void Unpause()
     {
         Time.timeScale = 1;
-        //isGameActive = true;
         pauseScreen.SetActive(false);
     }
 
+    //start the game with selected difficulty
     public void ChangeDifficulty(float spawnRate)
     {
         this.spawnRate = spawnRate;
@@ -121,6 +132,7 @@ public class GameManager : MonoBehaviour
         startScreen.gameObject.SetActive(false);
     }
 
+    //show gameover screen and end the game
     public void GameOver()
     {
         if (tutorialActive)
@@ -148,6 +160,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
     }
 
+    //reset everything and bring player back to start screen
     public void Restart()
     {
         Time.timeScale = 1;
@@ -160,16 +173,15 @@ public class GameManager : MonoBehaviour
         startScreen.gameObject.SetActive(true);
     }
 
+    //start the tutorial
     public void Tutorial()
     {
         startScreen.gameObject.SetActive(false);
         tutorialText.gameObject.SetActive(true);
         tutorialActive = true;
-
-        
     }
 
-
+    //spawn fruit
     IEnumerator SpawnFruits()
     {
         while (isGameActive)

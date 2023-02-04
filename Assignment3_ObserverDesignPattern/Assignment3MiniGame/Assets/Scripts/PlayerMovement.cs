@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour
+//this is a test to make sure that visual studio will not crash.,
+public class PlayerMovement : MonoBehaviour, ISubject
 {
+    //player will notify the sheep and coyotes of where it's location is if it is barking.
+
     public Animator animator;
     public Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
@@ -54,5 +56,20 @@ public class PlayerMovement : MonoBehaviour
             vertical *= moveLimiter;
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
+
+    public void RegisterObserver(IObserver observer)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void RemoveObserver(IObserver observer)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void NotifyObservers()
+    {
+        throw new System.NotImplementedException();
     }
 }

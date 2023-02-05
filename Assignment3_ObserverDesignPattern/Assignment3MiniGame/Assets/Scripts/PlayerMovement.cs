@@ -1,25 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//this is a test to make sure that visual studio will not crash.,
+/*
+ * Anna Breuker
+ * PlayerMovement.cs
+ * Assignment 3 - Observer Pattern
+ * This subject class provides behaviors for the player and 
+ * sends information to the sheep and coyote classes.
+ */
 public class PlayerMovement : MonoBehaviour, ISubject
 {
-    //player will notify the sheep and coyotes of where it's location is if it is barking.
-
+    //basic variables.
     public Animator animator;
     public Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
 
+    //movement variables
     public float horizontal;
     public float vertical;
     public float moveLimiter = 0.7f;
 
     public float runSpeed = 3.0f;
 
+    //subject variables
     public List<IObserver> observers = new List<IObserver>();
     public Vector2 currentPos;
     public bool isBarking;
 
+    //variables specifically for the bark image.
     public GameObject bark1;
     public GameObject bark2;
     public GameObject barkPrefered;
@@ -96,12 +104,14 @@ public class PlayerMovement : MonoBehaviour, ISubject
         }
     }
 
+    //register observers
     public void RegisterObserver(IObserver observer)
     {
-        Debug.Log("Registering an Observer");
+        //Debug.Log("Registering an Observer");
         observers.Add(observer);
     }
 
+    //remove an observer 
     public void RemoveObserver(IObserver observer)
     {
         if (observers.Contains(observer))
@@ -110,6 +120,7 @@ public class PlayerMovement : MonoBehaviour, ISubject
         }
     }
 
+    //update observers
     public void NotifyObservers()
     {
         foreach (IObserver observer in observers)

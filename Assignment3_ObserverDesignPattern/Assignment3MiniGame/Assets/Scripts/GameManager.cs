@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 /*
  * Anna Breuker
  * GameManager.cs
- * Assignment 2 - Strategy Pattern
- * This class manages the game. It's not a singleton but it still gets
+ * Assignment 3 - Observer Pattern
+ * This class manages the game. It's (still) not a singleton but it still gets
  * the job done.
  */
 public class GameManager : MonoBehaviour
 {
-    public int score;
+    //general (mostly ui) variables
     public float spawnRate = 3.0f;
     public float numOfSheep;
     public GameObject player;
@@ -29,26 +29,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI endText;
     public TextMeshProUGUI winScoreText;
 
-    private int tutorialStep;
-    public TextMeshProUGUI tutorialText;
-    public GameObject exampleImages;
-    private bool calledOnce = false;
-
     public GameObject sheep;
     public List<GameObject> sheepPlural = new List<GameObject>();
     public GameObject coyote;
 
     private float timer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
+        //manage the game timer.
         if (isGameActive)
         {
             timer += Time.deltaTime;
@@ -60,17 +50,12 @@ public class GameManager : MonoBehaviour
             Pause();
         }
 
-        //check if game is won CHANGE LOSS CONDITION
+        //check if game is won
         if (timer >= 60)
         {
             GameOver();
         }
 
-        //tutorial stuff
-        if (tutorialActive)
-        {
-
-        }
     }
 
     //pause the game
@@ -129,12 +114,7 @@ public class GameManager : MonoBehaviour
         pauseScreen.gameObject.SetActive(false);
     }
 
-    //start the tutorial
-    public void Tutorial()
-    {
-
-    }
-
+    //spawn coyotes
     IEnumerator SpawnCoyote() 
     {
         while (isGameActive) 

@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Coyote.cs
+ * Assignment 3 - Observer Pattern
+ * This observer class provides the behaviors for the coyote enemies.
+ */
 public class Coyote : MonoBehaviour, IObserver
 {
     SpriteRenderer spriteRenderer;
@@ -56,6 +61,8 @@ public class Coyote : MonoBehaviour, IObserver
             }
         }
     }
+
+    //updates self with data from player
     public void UpdateSelf(Vector2 playerPos, bool playerBarking)
     {
         Debug.Log("Updating self (coyote)");
@@ -63,6 +70,7 @@ public class Coyote : MonoBehaviour, IObserver
         this.playerBarking = playerBarking;
     }
 
+    //code to manage movement
     public void Move()
     {
         //body.constraints = RigidbodyConstraints2D.FreezePositionZ;
@@ -93,6 +101,7 @@ public class Coyote : MonoBehaviour, IObserver
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
+    //when out of range of player, move towards a sheep.
     public void MoveTowardsSheep()
     {
         sheepPosition = gameManager.sheepPlural[0].transform.position;
@@ -108,6 +117,7 @@ public class Coyote : MonoBehaviour, IObserver
         this.transform.position += towardsSheep * Time.deltaTime * moveSpeed;
     }
 
+    //manages spawn position.
     private Vector2 RandomSpawnPos()
     {
         if (Random.value > .5f)
@@ -120,6 +130,7 @@ public class Coyote : MonoBehaviour, IObserver
         }
     }
 
+    //kills coyote when they go out of bounds
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("DespawnWall"))

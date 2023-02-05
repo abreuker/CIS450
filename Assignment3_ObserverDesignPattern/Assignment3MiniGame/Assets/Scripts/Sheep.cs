@@ -2,7 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Sheep.cs
+ * Assignment 3 - Observer Pattern
+ * This observer class provides the behaviors for the sheep entities.
+ */
 public class Sheep : MonoBehaviour, IObserver
 {
     SpriteRenderer spriteRenderer;
@@ -65,6 +70,8 @@ public class Sheep : MonoBehaviour, IObserver
             }
         }
     }
+
+    //update self with data from the player.
     public void UpdateSelf(Vector2 playerPos, bool playerBarking)
     {
         Debug.Log("Updating self (sheep)");
@@ -72,6 +79,7 @@ public class Sheep : MonoBehaviour, IObserver
         this.playerBarking = playerBarking;
     }
 
+    //code to move around.
     public void Move()
     {
         //body.constraints = RigidbodyConstraints2D.FreezePositionZ;
@@ -103,6 +111,7 @@ public class Sheep : MonoBehaviour, IObserver
 
     }
 
+    //moving around randomly when out of range of player.
     public void RandomMove()
     {
         this.transform.position += moveDirections[currentMoveDirection] * Time.deltaTime * moveSpeed;
@@ -127,11 +136,13 @@ public class Sheep : MonoBehaviour, IObserver
         }
     }
 
+    //manage where the sheep spawn
     private Vector2 RandomSpawnPos()
     {
         return new Vector2(UnityEngine.Random.Range(-xRange, xRange), UnityEngine.Random.Range(-yRange, yRange));
     }
 
+    //code to kill the sheep and end the game.
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("DespawnWall"))

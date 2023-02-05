@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Assignment3MiniGame</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=1024 height=576 style="width: 1024px; height: 576px; background: #000000"></canvas>
+    <script src="Build/sheeptry3.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/sheeptry3.data",
+        frameworkUrl: "Build/sheeptry3.framework.js",
+        codeUrl: "Build/sheeptry3.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Assignment3MiniGame",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>

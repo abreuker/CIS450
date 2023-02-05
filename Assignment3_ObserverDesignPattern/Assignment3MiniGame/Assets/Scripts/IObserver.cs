@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IObserver
 {
-    public void UpdateSelf();
+    public void UpdateSelf(Vector2 playerPos, bool playerBarking);
 }

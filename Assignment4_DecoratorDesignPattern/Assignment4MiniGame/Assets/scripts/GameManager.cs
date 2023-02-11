@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /*
  * Anna Breuker
  * GameManager.cs
- * Assignment 3 - Observer Pattern
+ * Assignment 4 - Decorator Pattern
  * This class manages the game. It's (still) not a singleton but it still gets
  * the job done.
  */
@@ -25,48 +25,21 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public bool tutorialActive;
 
-    public TextMeshProUGUI timerText;
+    public float score;
+
+    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI endScoreText;
     public TextMeshProUGUI endText;
     public TextMeshProUGUI winScoreText;
 
+    //add something so that if the active pizza is cooked, the topping buttons disapear so you can't add any more and have to either trash it or get negative points.
+    public GameObject[] addToppingButtons;
+
     // Update is called once per frame
     void Update()
     {
-        //pause input
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
+        scoreText.text = "score: " + score;
 
-    }
-
-    //pause the game
-    private void Pause()
-    {
-        Time.timeScale = 0;
-        pauseScreen.SetActive(true);
-    }
-
-    //unpause the game
-    public void Unpause()
-    {
-        Time.timeScale = 1;
-        pauseScreen.SetActive(false);
-    }
-
-    //start the game with selected difficulty
-    public void ChangeDifficulty(float numOfSheep)
-    {
-        //to implement
-    }
-
-    //show gameover screen and end the game
-    public void GameOver()
-    {
-        isGameActive = false;
-        endScreen.SetActive(true);
-        //to implement
     }
 
     //reset everything and bring player back to start screen
@@ -74,9 +47,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
-        startScreen.gameObject.SetActive(true);
-        endScreen.gameObject.SetActive(false);
-        pauseScreen.gameObject.SetActive(false);
     }
 
 

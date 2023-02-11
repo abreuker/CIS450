@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToppingSasauge : ToppingDecorator
+public class ToppingPinap : ToppingDecorator
 {
     public Toppings toppings;
 
-    public ToppingSasauge(Toppings toppings)
+    public ToppingPinap(Toppings toppings)
     {
         this.toppings = toppings;
     }
 
-    public override float scoreValue 
+    public override float scoreValue
     {
         get { return toppings.scoreValue + 5; }
-        set { scoreValue= value; }
+        set { scoreValue = value; }
     }
 
-    public override bool hasSausage 
+    public override bool hasSausage
     {
-        get { return true; }
-        set { hasSausage = true; }
+        get { return toppings.hasSausage; }
+        set { hasSausage = toppings.hasSausage; }
     }
     public override bool hasMush
     {
@@ -34,8 +34,8 @@ public class ToppingSasauge : ToppingDecorator
     }
     public override bool hasPinap
     {
-        get { return toppings.hasPinap; }
-        set { hasPinap = toppings.hasPinap; }
+        get { return true; }
+        set { hasPinap = true; }
     }
 
     public override bool hasHam

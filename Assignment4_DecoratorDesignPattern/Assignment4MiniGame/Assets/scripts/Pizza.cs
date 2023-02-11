@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public class Pizza : MonoBehaviour
 {
 
     public GameManager gameManager;
+    
     public GameObject[] toppingsObjects;
     public Toppings toppings;
-
-    public float scoreValue;
-
-    public bool beenCooked;
+    
+    public bool isCooked;
 
     public GameObject pizzaActiveOutline;
+
+    public Pizza pizzaPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,6 @@ public class Pizza : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log(toppings.hasSausage);
         gameManager.activePizza = this;
         pizzaActiveOutline.SetActive(true);
     }

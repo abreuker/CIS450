@@ -13,4 +13,10 @@ public abstract class ToppingDecorator : Toppings
     public override abstract bool hasPep { get; set; }
 
     public override abstract bool hasPinap { get; set; }
+
+    public override abstract bool hasHam { get; set; }
+
+    public override abstract bool hasCheese { get; set; }
+
+    public override abstract bool hasSauce { get; set; }
 }

@@ -15,4 +15,10 @@ public class Toppings
     [field: SerializeField] public virtual bool hasPep { set; get; } = false;
 
     [field: SerializeField] public virtual bool hasPinap { set; get; } = false;
+
+    [field: SerializeField] public virtual bool hasHam { set; get; } = false;
+
+    [field: SerializeField] public virtual bool hasCheese { set; get; } = false;
+
+    [field: SerializeField] public virtual bool hasSauce{ set; get; } = false;
 }

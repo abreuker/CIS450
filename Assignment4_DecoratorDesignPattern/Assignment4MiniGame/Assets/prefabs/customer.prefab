@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3696055963923371096}
   - component: {fileID: 3696055963923371099}
   - component: {fileID: 3696055963923371098}
+  - component: {fileID: 8785081529149918435}
   m_Layer: 0
   m_Name: customer
   m_TagString: Untagged
@@ -127,7 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  body: {fileID: 0}
   pizzaOrderSprite: {fileID: 3696055964609949611}
+  pizzaOrderBox: {fileID: 3696055965676779106}
   pizzaOrderSpriteRenderer: {fileID: 3696055964609949608}
   pizzaOrderImages:
   - {fileID: 21300000, guid: 0f38340af0ac1f34fb49099cba0bae8a, type: 3}
@@ -136,12 +139,40 @@ MonoBehaviour:
   - {fileID: 21300000, guid: af13bb3545ccf414a868b14a6e9209dd, type: 3}
   - {fileID: 21300000, guid: a62d95616bd6b984e9c457e2170beb08, type: 3}
   pizzaOrderNames:
-  - 
-  - 
-  - 
-  - 
-  - 
+  - all
+  - hamAndPinap
+  - allNoPinap
+  - sausageAndMush
+  - sausageAndPep
+  pizzaOrderName: 
+  pizzaOrderNum: 0
+  customerEmotes:
+  - {fileID: 21300000, guid: 39aede81289d9774b99e5c776773363f, type: 3}
+  - {fileID: 21300000, guid: 6f6207d8e3d18f147ac08525355c3926, type: 3}
+  - {fileID: 21300000, guid: 6806236578746f444a9ba1979a3f9d9a, type: 3}
+  customerRenderer: {fileID: 0}
   customerActiveOutline: {fileID: 3696055964522965761}
+--- !u!50 &8785081529149918435
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3696055963923371077}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3696055964522965761
 GameObject:
   m_ObjectHideFlags: 0

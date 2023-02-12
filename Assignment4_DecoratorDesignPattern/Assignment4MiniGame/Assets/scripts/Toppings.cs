@@ -1,7 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Toppings.cs
+ * Assignment 4 - Decorator Pattern
+ * I believe this is technically the component script of 
+ * the decorator pattern. It's the base of all the topping decorations. 
+ */
 
 [System.Serializable]
 public class Toppings 

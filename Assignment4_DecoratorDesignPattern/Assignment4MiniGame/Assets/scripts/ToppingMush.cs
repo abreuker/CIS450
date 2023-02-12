@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * ToppingMush.cs
+ * Assignment 4 - Decorator Pattern
+ * Concrete decorator, topping that adds to the score of the pizza and
+ * changes hasMush to true while preserving other bools. 
+ */
 public class ToppingMush : ToppingDecorator
 {
+    //past topping
     public Toppings toppings;
+
+    //constructor
     public ToppingMush(Toppings toppings)
     {
         this.toppings = toppings;

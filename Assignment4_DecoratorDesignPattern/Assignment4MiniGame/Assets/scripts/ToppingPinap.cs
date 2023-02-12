@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * ToppingPinap.cs
+ * Assignment 4 - Decorator Pattern
+ * Concrete decorator, topping that adds to the score of the pizza and
+ * changes hasPinap to true while preserving other bools. 
+ */
 public class ToppingPinap : ToppingDecorator
 {
+    //past topping
     public Toppings toppings;
 
+    //constructor
     public ToppingPinap(Toppings toppings)
     {
         this.toppings = toppings;

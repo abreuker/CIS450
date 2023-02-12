@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Anna Breuker
+ * Customer.cs
+ * Assignment 4 - Decorator Pattern
+ * This class holds the behavior and variables for the customers. 
+ */
 public class CustomerBehavior : MonoBehaviour
 {
+    //general variables
     public GameManager gameManager;
     public Rigidbody2D body;
 
+    //variables related to pizza orders.
     public GameObject pizzaOrderSprite;
     public GameObject pizzaOrderBox;
     public SpriteRenderer pizzaOrderSpriteRenderer;
@@ -15,16 +23,12 @@ public class CustomerBehavior : MonoBehaviour
     public string pizzaOrderName;
     public int pizzaOrderNum;
 
+    //variables needed for the customer emotes
     public Sprite[] customerEmotes;
     public SpriteRenderer customerRenderer;
 
+    //variable which shows which customer is clicked on.
     public GameObject customerActiveOutline;
-
-    //ok. need to have this set up so depending on the random order the requirements to get points for the pizza are different.
-    //also need to have it in the design pattern so that when the toppings are added to a pizza they are worth more points.
-    //might... might just go easy mode this time i'm having trouble thinking of how this'd be a full minigame without a Ton of work being put in. 
-
-    
 
     // Start is called before the first frame update
     void Start()
@@ -52,101 +56,109 @@ public class CustomerBehavior : MonoBehaviour
         }
     }
 
+    //code to check if a pizza is correct for this specific customer.
     public bool IsPizzaCorrect(Pizza pizza) 
     {
-        Debug.Log("active pizza topping status:\nSauce: " + gameManager.activePizza.toppings.hasSauce 
-            + " Cheese: " + gameManager.activePizza.toppings.hasCheese
-            + " Sausage: " + gameManager.activePizza.toppings.hasSausage
-            + " Pep: " + gameManager.activePizza.toppings.hasPep
-            + " Pinap: " + gameManager.activePizza.toppings.hasPinap
-            + " Ham: " + gameManager.activePizza.toppings.hasHam
-            + " Mush: " + gameManager.activePizza.toppings.hasMush);
-        //i apologize in advance for how spghetti this is going to get. 
-        if (pizzaOrderNum == 0) //all
+        if (pizza != null)
         {
-            //if (gameManager.activePizza.toppings.hasSausage) ;
-            if (gameManager.activePizza.isCooked
-                && gameManager.activePizza.toppings.hasSauce
-                && gameManager.activePizza.toppings.hasCheese
-                && gameManager.activePizza.toppings.hasSausage
-                && gameManager.activePizza.toppings.hasPep
-                && gameManager.activePizza.toppings.hasPinap
-                && gameManager.activePizza.toppings.hasHam
-                && gameManager.activePizza.toppings.hasMush)
+            Debug.Log("active pizza topping status:\nSauce: " + gameManager.activePizza.toppings.hasSauce
+                + " Cheese: " + gameManager.activePizza.toppings.hasCheese
+                + " Sausage: " + gameManager.activePizza.toppings.hasSausage
+                + " Pep: " + gameManager.activePizza.toppings.hasPep
+                + " Pinap: " + gameManager.activePizza.toppings.hasPinap
+                + " Ham: " + gameManager.activePizza.toppings.hasHam
+                + " Mush: " + gameManager.activePizza.toppings.hasMush);
+            //i apologize in advance for how spghetti this is going to get. 
+            if (pizzaOrderNum == 0) //all
             {
-                return true;
+                //if (gameManager.activePizza.toppings.hasSausage) ;
+                if (gameManager.activePizza.isCooked
+                    && gameManager.activePizza.toppings.hasSauce
+                    && gameManager.activePizza.toppings.hasCheese
+                    && gameManager.activePizza.toppings.hasSausage
+                    && gameManager.activePizza.toppings.hasPep
+                    && gameManager.activePizza.toppings.hasPinap
+                    && gameManager.activePizza.toppings.hasHam
+                    && gameManager.activePizza.toppings.hasMush)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            else if (pizzaOrderNum == 1) //pinaple and ham
             {
-                return false;
+                if (gameManager.activePizza.isCooked
+                    && gameManager.activePizza.toppings.hasSauce
+                    && gameManager.activePizza.toppings.hasCheese
+                    && !gameManager.activePizza.toppings.hasSausage
+                    && !gameManager.activePizza.toppings.hasPep
+                    && gameManager.activePizza.toppings.hasPinap
+                    && gameManager.activePizza.toppings.hasHam
+                    && !gameManager.activePizza.toppings.hasMush)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-        }
-        else if (pizzaOrderNum == 1) //pinaple and ham
-        {
-            if (gameManager.activePizza.isCooked
-                && gameManager.activePizza.toppings.hasSauce
-                && gameManager.activePizza.toppings.hasCheese
-                && !gameManager.activePizza.toppings.hasSausage
-                && !gameManager.activePizza.toppings.hasPep
-                && gameManager.activePizza.toppings.hasPinap
-                && gameManager.activePizza.toppings.hasHam
-                && !gameManager.activePizza.toppings.hasMush)
+            else if (pizzaOrderNum == 2) //all but pinaple
             {
-                return true;
+                if (gameManager.activePizza.isCooked
+                    && gameManager.activePizza.toppings.hasSauce
+                    && gameManager.activePizza.toppings.hasCheese
+                    && gameManager.activePizza.toppings.hasSausage
+                    && gameManager.activePizza.toppings.hasPep
+                    && !gameManager.activePizza.toppings.hasPinap
+                    && gameManager.activePizza.toppings.hasHam
+                    && gameManager.activePizza.toppings.hasMush)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            else if (pizzaOrderNum == 3) //sausage and mushroom
             {
-                return false;
+                if (gameManager.activePizza.isCooked
+                    && gameManager.activePizza.toppings.hasSauce
+                    && gameManager.activePizza.toppings.hasCheese
+                    && gameManager.activePizza.toppings.hasSausage
+                    && !gameManager.activePizza.toppings.hasPep
+                    && !gameManager.activePizza.toppings.hasPinap
+                    && !gameManager.activePizza.toppings.hasHam
+                    && gameManager.activePizza.toppings.hasMush)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-        } 
-        else if (pizzaOrderNum == 2) //all but pinaple
-        {
-            if (gameManager.activePizza.isCooked
-                && gameManager.activePizza.toppings.hasSauce
-                && gameManager.activePizza.toppings.hasCheese
-                && gameManager.activePizza.toppings.hasSausage
-                && gameManager.activePizza.toppings.hasPep
-                && !gameManager.activePizza.toppings.hasPinap
-                && gameManager.activePizza.toppings.hasHam
-                && gameManager.activePizza.toppings.hasMush)
+            else if (pizzaOrderNum == 4) //sausage and peporoni
             {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (pizzaOrderNum == 3) //sausage and mushroom
-        {
-            if (gameManager.activePizza.isCooked
-                && gameManager.activePizza.toppings.hasSauce
-                && gameManager.activePizza.toppings.hasCheese
-                && gameManager.activePizza.toppings.hasSausage
-                && !gameManager.activePizza.toppings.hasPep
-                && !gameManager.activePizza.toppings.hasPinap
-                && !gameManager.activePizza.toppings.hasHam
-                && gameManager.activePizza.toppings.hasMush)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (pizzaOrderNum == 4) //sausage and peporoni
-        {
-            if (gameManager.activePizza.isCooked
-                && gameManager.activePizza.toppings.hasSauce
-                && gameManager.activePizza.toppings.hasCheese
-                && gameManager.activePizza.toppings.hasSausage
-                && gameManager.activePizza.toppings.hasPep
-                && !gameManager.activePizza.toppings.hasPinap
-                && !gameManager.activePizza.toppings.hasHam
-                && !gameManager.activePizza.toppings.hasMush)
-            {
-                return true;
+                if (gameManager.activePizza.isCooked
+                    && gameManager.activePizza.toppings.hasSauce
+                    && gameManager.activePizza.toppings.hasCheese
+                    && gameManager.activePizza.toppings.hasSausage
+                    && gameManager.activePizza.toppings.hasPep
+                    && !gameManager.activePizza.toppings.hasPinap
+                    && !gameManager.activePizza.toppings.hasHam
+                    && !gameManager.activePizza.toppings.hasMush)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
@@ -159,6 +171,7 @@ public class CustomerBehavior : MonoBehaviour
         }
     }
 
+    //sends the customer off screen (to be deleted)
     public void LeaveScene()
     {
         pizzaOrderBox.SetActive(false);
@@ -166,6 +179,7 @@ public class CustomerBehavior : MonoBehaviour
         body.AddForce(Vector2.left * .05f); 
     }
 
+    //for when the player clicks on the customer
     private void OnMouseDown()
     {
         gameManager.activeCustomer= this;
@@ -173,9 +187,10 @@ public class CustomerBehavior : MonoBehaviour
         customerActiveOutline.SetActive(true);
     }
 
+    //specifically for despawning the customer when they are no longer needed.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null)
+        if (collision.CompareTag("DespawnZone"))
         {
             Destroy(gameObject);
         }

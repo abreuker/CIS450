@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - pizzaOrderSprite
+  - DespawnZone
   layers:
   - Default
   - TransparentFX

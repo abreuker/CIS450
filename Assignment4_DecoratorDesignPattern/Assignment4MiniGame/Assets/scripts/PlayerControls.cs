@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * PlayerControls.cs
+ * Assignment 4 - Decorator Pattern
+ * Code for most if not all of the button methods.
+ */
 public class PlayerControls : MonoBehaviour
 {
+    //general variables.
     public Pizza pizza;
     public GameObject pizzaPrefab;
     public GameManager gameManager;
@@ -20,6 +26,7 @@ public class PlayerControls : MonoBehaviour
         pizza = gameManager.activePizza;
     }
 
+    //code that adds a topping to the active pizza. 
     public void AddTopping(string pizzaTopping)
     {
         if (pizza != null)
@@ -60,6 +67,7 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    //code that cooks the pizza (sets the bool to true.)
     public void CookPizza()
     {
         if (pizza != null)
@@ -68,23 +76,28 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    //code for checking if the pizza matches the customer you're giving it to. 
     public void GivePizzaToCustomer()
     {
-        Debug.Log(gameManager.activeCustomer.IsPizzaCorrect(gameManager.activePizza));
-        if (gameManager.activeCustomer.IsPizzaCorrect(gameManager.activePizza))
+        if (pizza != null)
         {
-            gameManager.activeCustomer.customerRenderer.sprite = gameManager.activeCustomer.customerEmotes[1];
-            gameManager.score += gameManager.activePizza.toppings.scoreValue;
+            Debug.Log(gameManager.activeCustomer.IsPizzaCorrect(gameManager.activePizza));
+            if (gameManager.activeCustomer.IsPizzaCorrect(gameManager.activePizza))
+            {
+                gameManager.activeCustomer.customerRenderer.sprite = gameManager.activeCustomer.customerEmotes[1];
+                gameManager.score += gameManager.activePizza.toppings.scoreValue;
+            }
+            else
+            {
+                gameManager.activeCustomer.customerRenderer.sprite = gameManager.activeCustomer.customerEmotes[2];
+            }
+            Instantiate(pizzaPrefab);
+            Destroy(pizza.gameObject);
+            gameManager.activeCustomer.LeaveScene();
         }
-        else
-        {
-            gameManager.activeCustomer.customerRenderer.sprite = gameManager.activeCustomer.customerEmotes[2];
-        }
-        Instantiate(pizzaPrefab);
-        Destroy(pizza.gameObject);
-        gameManager.activeCustomer.LeaveScene();
     }
 
+    //code for throwing out the pizza if you mess up and want another try.
     public void TrashPizza()
     {
         Instantiate(pizzaPrefab);

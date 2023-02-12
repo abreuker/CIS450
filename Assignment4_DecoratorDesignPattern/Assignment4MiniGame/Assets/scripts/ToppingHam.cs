@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * ToppingHam.cs
+ * Assignment 4 - Decorator Pattern
+ * Concrete decorator, topping that adds to the score of the pizza and
+ * changes hasHam to true while preserving other bools. 
+ */
 public class ToppingHam : ToppingDecorator
 {
+    //past topping
     public Toppings toppings;
 
+    //constructor
     public ToppingHam(Toppings toppings)
     {
         this.toppings = toppings;

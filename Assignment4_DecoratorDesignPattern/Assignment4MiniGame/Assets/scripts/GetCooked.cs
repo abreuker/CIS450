@@ -1,7 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * GetCooked.cs
+ * Assignment 4 - Decorator Pattern
+ * This simply switches the sprites for the pizza 
+ * and toppings to their cooked varients when
+ * the pizza is cooked. 
+ */
 public class GetCooked : MonoBehaviour
 {
     public Pizza pizza;

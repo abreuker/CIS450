@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public Vector2 holdVelocity;
     public bool holdVelocitySet;
@@ -38,17 +38,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-           
-            if (collision.gameObject.GetComponent<Enemy>() != null)
-            {
-                collision.gameObject.GetComponent<Enemy>().Die();
-            }
-            else 
-            {
+
+
                 Destroy(collision.gameObject);
-            }
+
             Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("DespawnWall"))
@@ -56,6 +51,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

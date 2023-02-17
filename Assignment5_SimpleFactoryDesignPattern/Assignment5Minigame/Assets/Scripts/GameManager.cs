@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public bool tutorialActive;
 
-    public TextMeshProUGUI timerText;
+    public int score;
+
+    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI endScoreText;
     public TextMeshProUGUI endText;
     public TextMeshProUGUI winScoreText;
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        scoreText.text = "score : " + score;
         //pause input
         if (Input.GetKeyDown(KeyCode.P))
         {

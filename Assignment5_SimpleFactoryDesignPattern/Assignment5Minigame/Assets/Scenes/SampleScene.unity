@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Picking off the Scraglers in a Weird Unexplained Intergalactic Space War
+  m_text: Picking off the Stragglers in a Weird Unexplained Intergalactic Space War
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d1ca83d7fb0836045884bb81d5622e93, type: 2}
   m_sharedMaterial: {fileID: 2952500240278878364, guid: d1ca83d7fb0836045884bb81d5622e93, type: 2}

@@ -5,9 +5,8 @@ using UnityEngine;
 /*
  * Anna Breuker
  * PlayerMovement.cs
- * Assignment 3 - Observer Pattern
- * This subject class provides behaviors for the player and 
- * sends information to the sheep and coyote classes.
+ * Assignment 5 - Simple Factory Pattern
+ * This class provides behaviors for the player.
  */
 public class PlayerMovement : MonoBehaviour
 {
@@ -47,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
 
+        //shoot bullets
         if (Input.GetKeyDown("space"))
         {
             Debug.Log("button pressed");

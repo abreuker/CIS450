@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Bullet.cs
+ * Assignment 5 - Simple Factory Pattern
+ * Contains code for the player's bullets
+ */
 public class Bullet : MonoBehaviour
 {
     public Vector2 holdVelocity;
@@ -18,11 +23,13 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets the velocity of the bullet
         if (!holdVelocitySet)
         {
             holdVelocity = GetComponent<Rigidbody2D>().velocity;
             holdVelocitySet = true;
         }
+        //making sure the game is active
         if (!gameManager.isGameActive)
         {
 
@@ -35,7 +42,7 @@ public class Bullet : MonoBehaviour
 
     }
 
-
+    //killing enemies and despawning when out of frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

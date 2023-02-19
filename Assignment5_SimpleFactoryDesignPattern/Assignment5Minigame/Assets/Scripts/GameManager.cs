@@ -6,23 +6,23 @@ using UnityEngine.SceneManagement;
 /*
  * Anna Breuker
  * GameManager.cs
- * Assignment 3 - Observer Pattern
- * This class manages the game. It's (still) not a singleton but it still gets
- * the job done.
+ * Assignment 5 - Simple Factory Pattern
+ * This class manages the game.
  */
 public class GameManager : MonoBehaviour
 {
     //general (mostly ui) variables
     public float spawnRate = 3.0f;
-    public float numOfSheep;
     public GameObject player;
+
+    public SpawnManager spawnManager;
 
     public GameObject startScreen;
     public GameObject endScreen;
-    public GameObject pauseScreen;
+
 
     public bool isGameActive;
-    public bool tutorialActive;
+
 
     public int score;
 
@@ -31,53 +31,44 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI endText;
     public TextMeshProUGUI winScoreText;
 
-    public GameObject sheep;
-    public List<GameObject> sheepPlural = new List<GameObject>();
-    public GameObject coyote;
-
-    private float timer;
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = "score : " + score;
-        //pause input
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
-
-        //check if game is won
-        if (timer >= 60)
+        if (score >= 250)
         {
             GameOver();
         }
-
     }
 
-    //pause the game
-    private void Pause()
-    {
-        Time.timeScale = 0;
-        pauseScreen.SetActive(true);
-    }
-
-    //unpause the game
-    public void Unpause()
-    {
-        Time.timeScale = 1;
-        pauseScreen.SetActive(false);
-    }
 
     //start the game with selected difficulty
-    public void ChangeDifficulty()
+    public void ChangeDifficulty(float spawnRate)
     {
-        
+        this.spawnRate = spawnRate;
+        isGameActive = true;
+        startScreen.gameObject.SetActive(false);
+        spawnManager.StartSpawning();
     }
 
     //show gameover screen and end the game
     public void GameOver()
     {
+        isGameActive= false;
+        endScreen.gameObject.SetActive(true);
+        Time.timeScale= 0;
+        if (score >= 250)
+        {
+            endText.text = "You Win! :)";
+            endScoreText.text = "Final Score: " + score;
+
+        }
+        else 
+        {
+            endText.text = "You lose :(";
+            endScoreText.text = "Final Score: " + score + "\nYou need 250 to win.";
+        }
         
     }
 
@@ -86,11 +77,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
-        timer = 0;
-        tutorialActive = false;
         startScreen.gameObject.SetActive(true);
         endScreen.gameObject.SetActive(false);
-        pauseScreen.gameObject.SetActive(false);
     }
 
 

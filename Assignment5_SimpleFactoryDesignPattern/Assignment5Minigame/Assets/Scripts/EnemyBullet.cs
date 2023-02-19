@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * EnemyBullet.cs
+ * Assignment 5 - Simple Factory Pattern
+ * Contains code for the enemy's bullets
+ */
 public class EnemyBullet : MonoBehaviour
 {
     public Vector2 holdVelocity;
@@ -18,11 +23,13 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set velocity of the bullet
         if (!holdVelocitySet)
         {
             holdVelocity = GetComponent<Rigidbody2D>().velocity;
             holdVelocitySet = true;
         }
+        //making sure the game is active
         if (!gameManager.isGameActive)
         {
 
@@ -38,15 +45,16 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //killing the player and despawning when out of frame
         if (collision.gameObject.CompareTag("Player"))
         {
 
-
-                Destroy(collision.gameObject);
+            gameManager.GameOver();
+            Destroy(collision.gameObject);
 
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("DespawnWall"))
+        else if (collision.gameObject.CompareTag("DespawnWall") || collision.gameObject.CompareTag("EnemyDespawnWall"))
         {
             Destroy(gameObject);
         }

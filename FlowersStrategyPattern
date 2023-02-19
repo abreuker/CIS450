@@ -1,86 +1,83 @@
-<mxfile host="app.diagrams.net" modified="2023-02-15T20:50:04.636Z" agent="5.0 (Windows)" etag="n7E0gU8yKINSI5UXxmdY" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-19T19:10:00.778Z" agent="5.0 (Windows)" etag="R_dq9Sdgz9NfBH9gEQVO" version="20.8.20" type="github">
   <diagram name="Page-1" id="gNzQqdgjs-4j2A9wk6UU">
-    <mxGraphModel dx="2074" dy="1181" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="950" dy="1175" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PlotOfDirt&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;+ flowers : GameObject[]&lt;/div&gt;&lt;div&gt;+ grave : Grave&lt;/div&gt;&lt;div&gt;+ flowerPlanted : bool&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PlantFlower(flowerNum : int): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PlotOfDirt&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;+ flowers : GameObject[]&lt;/div&gt;&lt;div&gt;+ grave : Grave&lt;/div&gt;&lt;div&gt;+ flowerPlanted : bool&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PlantFlower(flowerNum : int): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
           <mxGeometry x="360" y="130" width="230" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;GraveReaction&lt;/b&gt;&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;i&gt;&amp;nbsp;+ UpdateRemembrance() : float&lt;/i&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="480" y="480" width="200" height="70" as="geometry" />
+        <mxCell id="FM9LQNb_YlWhU3bKYK5e-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-2" target="TLaAi7WAs2dzz3krSD6c-6">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Neutral&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ pointsWorth : float&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&amp;nbsp;+ UpdateRemembrance() : float" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="475" y="760" width="210" height="90" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;GraveReaction&lt;/b&gt;&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;i&gt;&amp;nbsp;+ UpdateRemembrance() : float&lt;/i&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="315" width="200" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Hated&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;+ pointsWorth : float&lt;hr size=&quot;1&quot;&gt;&amp;nbsp;+ UpdateRemembrance() : float" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="610" width="210" height="90" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Neutral&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ pointsWorth : float&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&amp;nbsp;+ UpdateRemembrance() : float" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="375" y="640" width="210" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Loved&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ pointsWorth : float&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&amp;nbsp;+ UpdateRemembrance() : float" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="710" y="610" width="210" height="90" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Hated&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;+ pointsWorth : float&lt;hr size=&quot;1&quot;&gt;&amp;nbsp;+ UpdateRemembrance() : float" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="530" width="210" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Grave&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rememberanceBar : ProgressBar&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rememberance : float&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start() : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Update() : void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="710" y="180" width="240" height="120" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Loved&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ pointsWorth : float&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&amp;nbsp;+ UpdateRemembrance() : float" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="540" width="210" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-4" target="TLaAi7WAs2dzz3krSD6c-2">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Grave&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rememberanceBar : ProgressBar&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rememberance : float&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ graveReaction : GraveReaction&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start() : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Update() : void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="710" y="180" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="TLaAi7WAs2dzz3krSD6c-4" target="TLaAi7WAs2dzz3krSD6c-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="400" y="620" as="sourcePoint" />
             <mxPoint x="450" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-3" target="TLaAi7WAs2dzz3krSD6c-2">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="TLaAi7WAs2dzz3krSD6c-3" target="TLaAi7WAs2dzz3krSD6c-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="335" y="620" as="sourcePoint" />
             <mxPoint x="490" y="560" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-5" target="TLaAi7WAs2dzz3krSD6c-2">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="TLaAi7WAs2dzz3krSD6c-5" target="TLaAi7WAs2dzz3krSD6c-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="345" y="630" as="sourcePoint" />
             <mxPoint x="500" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-16" value="is a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="365" y="550" width="60" height="30" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-16" value="is a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="330" y="450" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Flower&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ stagesOfGrowth : Sprite[]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ spriteRenderer : Sprite Renderer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ stageOfGrowth : int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ growthStageTime : float&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ timer : float&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ graveReaction : GraveReaction&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start() : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Update() : void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="350" width="210" height="200" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Flower&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ stagesOfGrowth : Sprite[]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ spriteRenderer : Sprite Renderer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ stageOfGrowth : int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ growthStageTime : float&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ timer : float&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ graveReaction : GraveReaction&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start() : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Update() : void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="250" width="210" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-18" value="is a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="530" y="650" width="60" height="30" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-18" value="is a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="470" y="520" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-20" value="is a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="740" y="550" width="60" height="30" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-20" value="is a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="585" y="460" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.01;exitY=0.143;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.01;entryY=0.69;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-2" target="TLaAi7WAs2dzz3krSD6c-17">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="310" y="620" as="sourcePoint" />
-            <mxPoint x="360" y="570" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-17" target="TLaAi7WAs2dzz3krSD6c-1">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="TLaAi7WAs2dzz3krSD6c-17" target="TLaAi7WAs2dzz3krSD6c-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="420" y="500" as="sourcePoint" />
             <mxPoint x="470" y="450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.004;exitY=0.082;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="TLaAi7WAs2dzz3krSD6c-6" target="TLaAi7WAs2dzz3krSD6c-1">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.004;exitY=0.082;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="TLaAi7WAs2dzz3krSD6c-6" target="TLaAi7WAs2dzz3krSD6c-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="420" y="500" as="sourcePoint" />
             <mxPoint x="470" y="450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-24" value="is referenced by" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-24" value="is referenced by" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="625" y="150" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-25" value="is part of" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="370" y="460" width="60" height="30" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-25" value="is part of" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="600" y="350" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-26" value="is planted on" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="240" width="60" height="30" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-26" value="is planted on" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="230" y="170" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLaAi7WAs2dzz3krSD6c-28" value="Strategy Pattern with Flowers" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=24;" vertex="1" parent="1">
-          <mxGeometry x="490" y="40" width="195" height="56" as="geometry" />
+        <mxCell id="TLaAi7WAs2dzz3krSD6c-28" value="Strategy Pattern with Graves" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=24;" parent="1" vertex="1">
+          <mxGeometry x="390" y="40" width="195" height="56" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

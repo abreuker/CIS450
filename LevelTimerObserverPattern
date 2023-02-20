@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-20T03:52:29.712Z" agent="5.0 (Windows)" etag="8NEEF0Fw5KHUkIEjJPAP" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-20T03:56:25.206Z" agent="5.0 (Windows)" etag="UivnRzqA-J_GROS1MxkL" version="20.8.20" type="github">
   <diagram name="Page-1" id="rRDtYomwY1ddTIAVW-CJ">
     <mxGraphModel dx="1256" dy="1175" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -28,7 +28,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yVAquZ1Z6ku-l_WWfNix-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Ghost&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sprite : SpriteRenderer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ grave : Grave&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ghostBar : GameObject&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ floatingImagePrefab : GameObject&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ emotionSprites : Sprite[]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ghostBigRadiusCollider : Collider2D&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ghostCollider : Collider2D&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rigidbody : Rigidbody2D&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+previousChoice : int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ walkableZone : Collider2D&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ canEmotion : bool&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ timeRemaining : float&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start() : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ GhostBehavior() : IEnumerator&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Update() : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- OnTriggerEnter2D(collision : Collider2D) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- OnTriggerExit2D(collision : Collider2D) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ UpdateSelf(timeRemaining : float) : void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="700" y="600" width="290" height="300" as="geometry" />
+          <mxGeometry x="700" y="600" width="300" height="310" as="geometry" />
         </mxCell>
         <mxCell id="yVAquZ1Z6ku-l_WWfNix-2" value="implements" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=0.803;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yVAquZ1Z6ku-l_WWfNix-1" target="DLUmKlvSSLXJgQgGz_nh-2">
           <mxGeometry x="0.0193" relative="1" as="geometry">
@@ -71,6 +71,9 @@
         </mxCell>
         <mxCell id="yVAquZ1Z6ku-l_WWfNix-12" value="is an observer of" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="460" y="980" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yVAquZ1Z6ku-l_WWfNix-16" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Observer Pattern with LevelTimer&lt;/font&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="230" width="210" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

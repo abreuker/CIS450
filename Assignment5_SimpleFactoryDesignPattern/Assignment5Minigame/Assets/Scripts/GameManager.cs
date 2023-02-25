@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     //start the game with selected difficulty
     public void ChangeDifficulty(float spawnRate)
     {
+        Time.timeScale = 1;
         this.spawnRate = spawnRate;
         isGameActive = true;
         startScreen.gameObject.SetActive(false);

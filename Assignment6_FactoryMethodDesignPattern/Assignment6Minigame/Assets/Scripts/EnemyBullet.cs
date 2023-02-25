@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
  * Anna Breuker
- * Bullet.cs
+ * EnemyBullet.cs
  * Assignment 5 - Simple Factory Pattern
- * Contains code for the player's bullets
+ * Contains code for the enemy's bullets
  */
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public Vector2 holdVelocity;
     public bool holdVelocitySet;
@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //sets the velocity of the bullet
+        //set velocity of the bullet
         if (!holdVelocitySet)
         {
             holdVelocity = GetComponent<Rigidbody2D>().velocity;
@@ -42,27 +42,21 @@ public class Bullet : MonoBehaviour
 
     }
 
-    //killing enemies and despawning when out of frame
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        //killing the player and despawning when out of frame
+        if (collision.gameObject.CompareTag("Player"))
         {
 
-            if (collision.gameObject.GetComponent<SpaceFolk>() != null)
-            {
-                collision.gameObject.GetComponent<SpaceFolk>().Die();
-            }
-            else
-            {
-                Destroy(collision.gameObject);
-            }
+            gameManager.GameOver();
+            Destroy(collision.gameObject);
+
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("DespawnWall"))
+        else if (collision.gameObject.CompareTag("DespawnWall") || collision.gameObject.CompareTag("EnemyDespawnWall"))
         {
             Destroy(gameObject);
         }
     }
-
-
 }

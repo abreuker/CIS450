@@ -54,18 +54,18 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
-        endScreen.gameObject.SetActive(true);
+        //endScreen.gameObject.SetActive(true);
         Time.timeScale = 0;
         if (score >= 250)
         {
-            endText.text = "You Win! :)";
-            endScoreText.text = "Final Score: " + score;
+            //endText.text = "You Win! :)";
+            //endScoreText.text = "Final Score: " + score;
 
         }
         else
         {
-            endText.text = "You lose :(";
-            endScoreText.text = "Final Score: " + score + "\nYou need 250 to win.";
+            //endText.text = "You lose :(";
+            //endScoreText.text = "Final Score: " + score + "\nYou need 250 to win.";
         }
 
     }

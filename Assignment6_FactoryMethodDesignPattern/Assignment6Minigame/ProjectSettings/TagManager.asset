@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameManager
+  - Enemy
+  - Ally
+  - DespawnWall
+  - EnemyDespawnWall
   layers:
   - Default
   - TransparentFX

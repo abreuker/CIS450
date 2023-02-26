@@ -9,6 +9,7 @@ TagManager:
   - Ally
   - DespawnWall
   - EnemyDespawnWall
+  - PlayerConfiner
   layers:
   - Default
   - TransparentFX

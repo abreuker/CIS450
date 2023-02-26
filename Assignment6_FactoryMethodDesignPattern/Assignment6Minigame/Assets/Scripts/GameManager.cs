@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public GameObject startScreen;
     public GameObject endScreen;
 
+    public float speedMod;
+    public float distanceLeft = 300;
+    public TextMeshProUGUI distanceLeftText;
 
     public bool isGameActive;
 
@@ -33,6 +36,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGameActive)
+        { 
+            distanceLeft -= Time.deltaTime * speedMod;
+            distanceLeftText.text = "distance left: " + distanceLeft + "m";
+        }
         //scoreText.text = "score : " + score;
         if (score >= 250)
         {

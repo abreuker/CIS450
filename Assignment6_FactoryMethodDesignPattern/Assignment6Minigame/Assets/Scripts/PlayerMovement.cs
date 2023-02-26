@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour
 {
     //basic variables.
     public Rigidbody2D body;
+    public GameManager gameManager;
 
     //movement variables
+    public bool canMove;
     public float vertical;
     public float moveLimiter = 0.7f;
 
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -36,12 +39,14 @@ public class PlayerMovement : MonoBehaviour
 
         vertical = Input.GetAxis("Vertical");
 
-        //calculate movement
-        if (vertical != 0)
-        {
-            vertical *= moveLimiter;
-        }
-        body.velocity = new Vector2(0, vertical * runSpeed);
+
+            //calculate movement
+            if (vertical != 0)
+            {
+                vertical *= moveLimiter;
+            }
+            body.velocity = new Vector2(0, vertical * runSpeed);
+        
 
         //shoot bullets
         if (Input.GetKeyDown("space"))
@@ -54,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
                 shootBullet();
             }
         }
+        
 
 
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Anna Breuker
  * FloatingTentacle.cs
- * Assignment 5 - Simple Factory Pattern
+ * Assignment 6 - Factory Method Pattern
  * Code for the floating tentacles.
  */
 public class FloatingTentacle : SpaceFolk

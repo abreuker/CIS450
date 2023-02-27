@@ -4,7 +4,7 @@ using UnityEngine;
 /*
  * Anna Breuker
  * EyeballMonster.cs
- * Assignment 5 - Simple Factory Pattern
+ * Assignment 6 - Factory Method Pattern
  * Code for eyeball monsters.
  */
 public class EyeballMonster : SpaceFolk

@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * AllyShipShotgun.cs
+ * Assignment 6 - Factory Method Pattern
+ * Code for the shotgun ally ship.
+ */
 public class AllyShipShotgun : SpaceFolk
 {
     public GameObject bullet;

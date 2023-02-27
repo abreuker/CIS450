@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /*
  * Anna Breuker
  * GameManager.cs
- * Assignment 5 - Simple Factory Pattern
+ * Assignment 6 - Factory Method Pattern
  * This class manages the game.
  */
 public class GameManager : MonoBehaviour

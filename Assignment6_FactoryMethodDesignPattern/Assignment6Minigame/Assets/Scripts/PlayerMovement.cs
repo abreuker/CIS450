@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Anna Breuker
  * PlayerMovement.cs
- * Assignment 5 - Simple Factory Pattern
+ * Assignment 6 - Factory Method Pattern
  * This class provides behaviors for the player.
  */
 public class PlayerMovement : MonoBehaviour

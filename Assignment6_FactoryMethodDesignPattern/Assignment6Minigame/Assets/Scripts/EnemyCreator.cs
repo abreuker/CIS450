@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * EnemyCreator.cs
+ * Assignment 6 - Factory Method Pattern
+ * Creates enemy entities.
+ */
 public class EnemyCreator : SpaceFolkCreator
 {
     public GameObject enemyPrefab;

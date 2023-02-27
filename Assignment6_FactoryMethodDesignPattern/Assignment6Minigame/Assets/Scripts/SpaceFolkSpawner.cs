@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * SpaceFolkSpawner.cs
+ * Assignment 6 - Factory Method Pattern
+ * This code spawns entities using the factory pattern
+ */
 public class SpaceFolkSpawner : MonoBehaviour
 {
     public SpaceFolkCreator spaceFolkCreator;

@@ -4,7 +4,7 @@ using UnityEngine;
 /*
  * Anna Breuker
  * Bullet.cs
- * Assignment 5 - Simple Factory Pattern
+ * Assignment 6 - Factory Method Pattern
  * Contains code for the player's bullets
  */
 public class Bullet : MonoBehaviour

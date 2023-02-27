@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * PowerupBehavior.cs
+ * Assignment 6 - Factory Method Pattern
+ * Code for the powerups, which spawn enemies and allies using the spawner.
+ */
 public class PowerupBehavior : MonoBehaviour
 {
     Rigidbody2D body;

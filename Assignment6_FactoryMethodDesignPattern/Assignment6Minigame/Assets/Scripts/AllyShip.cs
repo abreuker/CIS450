@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * AllyShip.cs
+ * Assignment 6 - Factory Method Pattern
+ * Code for the simple ally ship.
+ */
 public class AllyShip : SpaceFolk
 {
     public GameObject bullet;

@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * AllyCreator.cs
+ * Assignment 6 - Factory Method Pattern
+ * Code for creating allies.
+ */
 public class AllyCreator : SpaceFolkCreator
 {
     public GameObject allyPrefab;

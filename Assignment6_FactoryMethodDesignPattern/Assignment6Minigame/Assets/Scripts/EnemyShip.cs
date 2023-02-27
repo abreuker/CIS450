@@ -4,7 +4,7 @@ using UnityEngine;
 /*
  * Anna Breuker
  * EnemyShip.cs
- * Assignment 5 - Simple Factory Pattern
+ * Assignment 6 - Factory Method Pattern
  * Code for the enemy ship.
  */
 public class EnemyShip : SpaceFolk

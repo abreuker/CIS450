@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Background.cs
+ * Assignment 6 - Factory Method Pattern
+ * Code for the scrolling background.
+ */
 public class BackgroundLoop : MonoBehaviour
 {
     public float speed;

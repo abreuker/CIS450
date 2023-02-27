@@ -4,8 +4,8 @@ using UnityEngine;
 /*
  * Anna Breuker
  * SpaceFolk.cs
- * Assignment 5 - Simple Factory Pattern
- * Contains the abstract code for all enemies along with all shared behaviors.
+ * Assignment 6 - Factory Method Pattern
+ * This code provides the base for all space folk
  */
 public abstract class SpaceFolk : MonoBehaviour
 {

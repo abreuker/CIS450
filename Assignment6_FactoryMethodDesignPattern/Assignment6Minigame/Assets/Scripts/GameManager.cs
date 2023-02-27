@@ -11,7 +11,8 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour
 {
-    //general (mostly ui) variables
+    //general variables
+    public SpaceFolkSpawner spawner;
     public float spawnRate = 3.0f;
     public GameObject player;
 
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
 
     public bool isGameActive;
 
-
     public int score;
 
     public TextMeshProUGUI scoreText;
@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI endText;
     public TextMeshProUGUI winScoreText;
 
+    public bool textRead;
+    public TextMeshProUGUI tutorialText;
+    public GameObject tutorialPanel;
+    public GameObject enemyExampleImage;
+    public GameObject powerupGoodExampleImage;
+    public GameObject powerupBadExampleImage;
 
     // Update is called once per frame
     void Update()
@@ -40,9 +46,10 @@ public class GameManager : MonoBehaviour
         { 
             distanceLeft -= Time.deltaTime * speedMod;
             distanceLeftText.text = "distance left: " + distanceLeft + "m";
+            scoreText.text = "score: " + score;
         }
         //scoreText.text = "score : " + score;
-        if (score >= 250)
+        if (distanceLeft <= 0)
         {
             GameOver();
         }
@@ -55,6 +62,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         this.spawnRate = spawnRate;
         isGameActive = true;
+        spawner.StartRandomSpawns();
         startScreen.gameObject.SetActive(false);
     }
 
@@ -62,18 +70,18 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
-        //endScreen.gameObject.SetActive(true);
+        endScreen.gameObject.SetActive(true);
         Time.timeScale = 0;
-        if (score >= 250)
+        if (distanceLeft <= 0)
         {
-            //endText.text = "You Win! :)";
-            //endScoreText.text = "Final Score: " + score;
+            endText.text = "You Win! :)";
+            endScoreText.text = "Final Score: " + score + "\nDistance Remaining: " + distanceLeft;
 
         }
         else
         {
-            //endText.text = "You lose :(";
-            //endScoreText.text = "Final Score: " + score + "\nYou need 250 to win.";
+            endText.text = "You lose :(";
+            endScoreText.text = "Final Score: " + score + "\nDistance Remaining: " + distanceLeft;
         }
 
     }
@@ -87,6 +95,51 @@ public class GameManager : MonoBehaviour
         endScreen.gameObject.SetActive(false);
     }
 
+    public void ContinueButton()
+    {
+        textRead = true;  
+    }
+
+    public void TutorialStart()
+    { 
+        StartCoroutine(Tutorial());
+    }
+
+    IEnumerator Tutorial() 
+    {
+        tutorialPanel.SetActive(true);
+        tutorialText.text = "To move, use W and S or up and down arrows.\n\nTo shoot, press SPACE.";
+        yield return new WaitUntil(() => textRead);
+
+        textRead= false;
+        enemyExampleImage.SetActive(true);
+        tutorialText.text = "These are enemies.\n\nShoot them to get more points, avoid them to stay alive.";
+        yield return new WaitUntil(() => textRead);
+
+        textRead = false;
+        enemyExampleImage.SetActive(false);
+        powerupGoodExampleImage.SetActive(true);
+        tutorialText.text = "Sometimes, powerups will appear on screen!\n\nThese are good ones, if you collect them, an ally will appear to help you!";
+        yield return new WaitUntil(() => textRead);
+
+        textRead = false;  
+        powerupGoodExampleImage.SetActive(false);
+        powerupBadExampleImage.SetActive(true);
+        tutorialText.text = "There's also bad powerups.\n\nThese call more enemies.";
+        yield return new WaitUntil(() => textRead);
+
+        textRead = false;
+        powerupBadExampleImage.SetActive(false);
+        tutorialText.text = "Each powerup calls different allies or enemies based on their color.\n\nBe sure to pay attention!";
+        yield return new WaitUntil(() => textRead);
+
+        textRead = false;
+        tutorialText.text = "To win, you need to reach your destination.\n\nA meter will be counting down in the top lefthand corner.";
+        yield return new WaitUntil(() => textRead);
+
+        textRead = false;
+        tutorialText.text = "That's it! Press the 'Back To Menu' button to head back to the menu and try it out!";
+    }
 
 }
 

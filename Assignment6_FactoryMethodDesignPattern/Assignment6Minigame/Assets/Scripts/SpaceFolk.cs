@@ -12,6 +12,8 @@ public abstract class SpaceFolk : MonoBehaviour
     public float scoreValue;
     public float speed;
     public Rigidbody2D body;
+    public bool isAlly;
+    public float allyDeathTimer;
 
     public GameManager gameManager;
 
@@ -28,6 +30,15 @@ public abstract class SpaceFolk : MonoBehaviour
         {
             Move();
         }
+        if (isAlly)
+        {
+            allyDeathTimer += Time.deltaTime;
+            if (allyDeathTimer > 5)
+            {
+                Die();
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +52,11 @@ public abstract class SpaceFolk : MonoBehaviour
             gameManager.GameOver();
             Destroy(collision.gameObject);
 
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Ally") && !gameObject.CompareTag("Ally"))
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

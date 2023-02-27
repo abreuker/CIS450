@@ -54,6 +54,11 @@ public class EnemyBullet : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Ally") && !gameObject.CompareTag("Ally"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
         else if (collision.gameObject.CompareTag("DespawnWall") || collision.gameObject.CompareTag("EnemyDespawnWall"))
         {
             Destroy(gameObject);

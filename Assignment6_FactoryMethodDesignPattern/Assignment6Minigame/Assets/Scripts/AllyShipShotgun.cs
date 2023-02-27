@@ -16,6 +16,7 @@ public class AllyShipShotgun : SpaceFolk
 
     public override void Move()
     {
+        isAlly = true;
         //horizontal movement
         if (transform.position.y > maxYPos)
         {

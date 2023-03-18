@@ -9,6 +9,6 @@ using UnityEngine;
  */
 public interface Command
 {
-    void Execute();
+    void Execute(Color newColor);
     void Undo();
 }

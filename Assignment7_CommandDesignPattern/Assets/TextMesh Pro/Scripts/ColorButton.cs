@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class ColorButton : MonoBehaviour
 {
+    public GameManager gameManager;
     public CustomCursor customCursor;
+    private Command changeCursorColor;
 
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         customCursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<CustomCursor>();
+        changeCursorColor = new ChangeCursorColor(customCursor);
     }
     public void ChangeColor(string colorType)
     {
         Debug.Log("button pressed");
         if (colorType.Equals("RED"))
         {
-            customCursor.cursorColor = new Color(255, 0, 0);
+            changeCursorColor.Execute(new Color(255, 0, 0));
+            gameManager.commandHistory.Push(changeCursorColor);
         }
         else if (colorType.Equals("BLUE"))
         {
-            customCursor.cursorColor = new Color(0, 0, 255);
+            changeCursorColor.Execute(new Color(0, 0, 255));
+            gameManager.commandHistory.Push(changeCursorColor);
         }
         else 
         {
-            customCursor.cursorColor = new Color(0, 255, 0);
+            changeCursorColor.Execute(new Color(0, 255, 0));
+            gameManager.commandHistory.Push(changeCursorColor);
         }
     }
 }

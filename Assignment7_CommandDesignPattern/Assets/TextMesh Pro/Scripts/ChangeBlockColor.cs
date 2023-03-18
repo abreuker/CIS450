@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * ChangeBlockColor.cs
+ * Assignment 7 - Command Pattern
+ * A command that changes the color of a block clicked on by the player.
+ */
 public class ChangeBlockColor : Command
 {
     PatternBlock patterBlock;

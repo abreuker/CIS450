@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+/*
+ * Anna Breuker
+ * GameManager.cs
+ * Assignment 7 - Command Pattern
+ * Code that manages the overall game and some of the button methods.
+ */
 public class GameManager : MonoBehaviour
 {
     public float correctTiles;
     public TextMeshProUGUI scoreText;
 
     public Stack<Command> commandHistory;
+
+    public GameObject controlsScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +51,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
+    }
+
+    public void ShowControls()
+    {
+        controlsScreen.SetActive(true);   
+    }
+
+    public void HideControls()
+    {
+        controlsScreen.SetActive(false);
     }
 }

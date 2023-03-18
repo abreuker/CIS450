@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Anna Breuker
+ * ChangeCursorColor.cs
+ * Assignment 7 - Command Pattern
+ * A command that changes the color of the cursor when a button is clicked by the player.
+ */
 public class ChangeCursorColor : Command
 {
     CustomCursor customCursor;

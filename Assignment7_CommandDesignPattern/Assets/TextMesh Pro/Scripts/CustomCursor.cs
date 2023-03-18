@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Anna Breuker
+ * CustomCursor.cs
+ * Assignment 7 - Command Pattern
+ * Code that both manages the custom cursor and the actions the 
+ * player can take by clicking things.
+ */
 public class CustomCursor : MonoBehaviour
 {
     public GameManager gameManager;

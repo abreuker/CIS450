@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Anna Breuker
+ * PatternBlock.cs
+ * Assignment 7 - Command Pattern
+ * Code that manages the state of the clickable blocks
+ * and runs the command for changing block color.
+ */
 public class PatternBlock : MonoBehaviour
 {
     public GameManager gameManager;
@@ -20,12 +26,6 @@ public class PatternBlock : MonoBehaviour
         blockImage = GetComponent<Image>();
 
         changeBlockColor = new ChangeBlockColor(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ChangeColor()

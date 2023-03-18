@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Anna Breuker
+ * DisplayBlock.cs
+ * Assignment 7 - Command Pattern
+ * Code for the fixed blocks that randomizes their color and checks if
+ * the player's blocks match.
+ */
 public class DisplayBlock : MonoBehaviour
 {
     public Image blockImage;

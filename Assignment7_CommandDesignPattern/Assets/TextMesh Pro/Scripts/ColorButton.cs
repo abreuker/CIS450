@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * ColorButton.cs
+ * Assignment 7 - Command Pattern
+ * Code for the buttons that the player can click to change the cursor color.
+ */
 public class ColorButton : MonoBehaviour
 {
     public GameManager gameManager;

@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Autopets.cs
+ * Assignment 8 - Template Pattern
+ * A powerup that is a subclass of the powerup button superclass.
+ * Adds a certain amount of extra clicks per second.
+ */
 public class Autopets : PowerupButtonSuperclass
 {
     public GameObject tutorialText;

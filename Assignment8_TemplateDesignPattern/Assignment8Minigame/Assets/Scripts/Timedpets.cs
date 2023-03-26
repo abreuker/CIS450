@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Timedpets.cs
+ * Assignment 8 - Template Pattern
+ * A powerup that is a subclass of the powerup button superclass.
+ * Makes all clicks do 10x pets for 30 seconds.
+ */
 public class Timedpets : PowerupButtonSuperclass
 {
     public GameObject tutorialText;

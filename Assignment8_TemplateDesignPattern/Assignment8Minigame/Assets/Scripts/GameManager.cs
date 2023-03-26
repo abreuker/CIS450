@@ -4,7 +4,12 @@ using UnityEngine;
 using TMPro;
 using System.Net.Sockets;
 using Unity.VisualScripting;
-
+/*
+ * Anna Breuker
+ * GameManager.cs
+ * Assignment 8 - Template Pattern
+ * The game manager that stores tutorial info and tracks the score.
+ */
 public class GameManager : MonoBehaviour
 {
 
@@ -32,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void ClickerButton()
     { 
-        Debug.Log("Button pressed");
+        //Debug.Log("Button pressed");
         kittiesKlicked += clickValue;
     }
 

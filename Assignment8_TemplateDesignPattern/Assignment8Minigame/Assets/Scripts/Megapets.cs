@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Megapets.cs
+ * Assignment 8 - Template Pattern
+ * A powerup that is a subclass of the powerup button superclass.
+ * Permanently doubles the amount of pets a single click gets you.
+ */
 public class Megapets : PowerupButtonSuperclass
 {
     public GameObject tutorialText;

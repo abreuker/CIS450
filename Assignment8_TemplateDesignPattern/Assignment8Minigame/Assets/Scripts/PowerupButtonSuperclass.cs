@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/*
+ * Anna Breuker
+ * PowerupButtonSuperclass.cs
+ * Assignment 8 - Template Pattern
+ * The template superclass that contains the general "ActivatePowerup()" class.
+ */
 public abstract class PowerupButtonSuperclass : MonoBehaviour
 {
     protected static bool firstTimePressed = true;

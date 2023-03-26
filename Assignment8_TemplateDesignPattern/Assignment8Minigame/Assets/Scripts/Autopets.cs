@@ -30,13 +30,14 @@ public class Autopets : PowerupButtonSuperclass
 
     public override void MakeNumberGoUp()
     {
+        gameManager.autoClicksStarted = true;
         if (IsFirstButtonPressed())
         {
             autoclickValue += 0.01f;
         }
         else
         {
-            autoclickValue *= 1.1f;
+            autoclickValue *= 1.5f;
         }
         gameManager.kittiesKlicked -= cost;
         cost *= 2;
@@ -47,5 +48,18 @@ public class Autopets : PowerupButtonSuperclass
         tutorialText.SetActive(true);
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         tutorialText.SetActive(false);
+    }
+
+    protected override bool IsFirstButtonPressed()
+    {
+        if (cost == 10)
+        {
+            firstTimePressed = true;
+        }
+        else
+        {
+            firstTimePressed= false;
+        }
+        return firstTimePressed;
     }
 }

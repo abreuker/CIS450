@@ -7,19 +7,17 @@ public abstract class PowerupButtonSuperclass : MonoBehaviour
 {
     protected static bool firstTimePressed = true;
     protected bool buttonDown = false;
-    protected bool isTimed;
     protected int cost;
 
     protected TextMeshProUGUI buttonText;
     protected string powerupName;
 
     public GameManager gameManager;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         firstTimePressed = true;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -31,24 +29,13 @@ public abstract class PowerupButtonSuperclass : MonoBehaviour
         if (gameManager.kittiesKlicked >= cost)
         {
             MakeNumberGoUp();
-            if (IsFirstButtonPressed())
-            {
-                StartCoroutine(ShowTutorialText());
-                firstTimePressed = false;
-            }
-            
-        }
-        
+            StartCoroutine(ShowTutorialText()); 
+        }   
     }
 
-    protected bool IsFirstButtonPressed()
+    protected virtual bool IsFirstButtonPressed()
     {
         return firstTimePressed;
-    }
-
-    protected virtual bool IsTimedPowerup()
-    {
-        return isTimed;
     }
 
     public abstract IEnumerator ShowTutorialText();

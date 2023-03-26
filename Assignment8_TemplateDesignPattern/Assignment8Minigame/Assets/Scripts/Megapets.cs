@@ -10,6 +10,8 @@ public class Megapets : PowerupButtonSuperclass
     // Start is called before the first frame update
     void Start()
     {
+        firstTimePressed = true;
+
         tutorialText = GameObject.FindGameObjectWithTag("MegapetText");
         tutorialText.SetActive(false);
 
@@ -39,5 +41,18 @@ public class Megapets : PowerupButtonSuperclass
         tutorialText.SetActive(true);
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         tutorialText.SetActive(false);
+    }
+
+    protected override bool IsFirstButtonPressed()
+    {
+        if (cost == 20)
+        {
+            firstTimePressed = true;
+        }
+        else
+        {
+            firstTimePressed = false;
+        }
+        return firstTimePressed;
     }
 }

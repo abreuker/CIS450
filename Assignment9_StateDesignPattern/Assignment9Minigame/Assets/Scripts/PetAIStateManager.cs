@@ -12,10 +12,12 @@ public class PetAIStateManager : MonoBehaviour
     void Start()
     {
         idleState = gameObject.AddComponent<IdleState>();
+        hungryState = gameObject.AddComponent<HungryState>();
+        excitedState = gameObject.AddComponent<ExcitedState>();
         currentState = idleState;
     }
 
-    public void MoveToRandomDirection() { currentState.MoveToRandomDirection(); }
+    public void Move() { currentState.Move(); }
     public void Bark() { currentState.Bark(); }
     public void Eat() { currentState.Eat(); }
     public void BePetted() { currentState.BePetted(); }

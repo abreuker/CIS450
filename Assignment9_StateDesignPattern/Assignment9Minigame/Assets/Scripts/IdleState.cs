@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class IdleState : PetState
 {
     PetAIStateManager petAIStateManager;
 
+    ParticleSystem hearts;
+
     GameObject idleBark;
 
     SpriteRenderer spriteRenderer;
     Animator animator;
+
+    GameManager gameManager;
 
     public float horizontal;
 
@@ -27,8 +32,13 @@ public class IdleState : PetState
     {
         petAIStateManager = gameObject.GetComponent<PetAIStateManager>();
         idleBark = GameObject.FindGameObjectWithTag("IdleBark");
+        idleBark.GetComponent<TextMeshProUGUI>().enabled = false;
         animator = GameObject.FindGameObjectWithTag("Pet").GetComponent<Animator>();
         spriteRenderer = GameObject.FindGameObjectWithTag("Pet").GetComponent<SpriteRenderer>();
+
+        hearts = GameObject.FindGameObjectWithTag("Hearts").GetComponent<ParticleSystem>();
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     public override void Bark()
@@ -38,24 +48,27 @@ public class IdleState : PetState
 
     public IEnumerator ShowBark()
     {
-        idleBark.SetActive(true);
+        idleBark.GetComponent<TextMeshProUGUI>().enabled = true;
         yield return new WaitForSeconds(2);
-        idleBark.SetActive(false);
+        idleBark.GetComponent<TextMeshProUGUI>().enabled = false;
     }
 
     public override void BePetted()
     {
         //when petted, pet gets excited!
+        gameManager.numOfPets++;
+        hearts.Play();
         petAIStateManager.currentState = petAIStateManager.excitedState;
     }
 
     public override void Eat()
     {
         //when fed while not hunrgy, just gets excited about the food.
-        petAIStateManager.currentState = petAIStateManager.excitedState;
+        Debug.Log("Ate while Idle.");
+        //petAIStateManager.currentState = petAIStateManager.excitedState;
     }
 
-    public override void MoveToRandomDirection()
+    public override void Move()
     {
         this.transform.position += moveDirections[currentMoveDirection] * Time.deltaTime * moveSpeed;
 

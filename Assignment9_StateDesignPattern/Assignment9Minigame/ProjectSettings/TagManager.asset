@@ -8,6 +8,9 @@ TagManager:
   - HungryBark
   - ExcitedBark
   - Pet
+  - Food
+  - Hearts
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PetState : MonoBehaviour
 {
-    public abstract void MoveToRandomDirection();
+    public abstract void Move();
 
     public abstract void Bark();
 

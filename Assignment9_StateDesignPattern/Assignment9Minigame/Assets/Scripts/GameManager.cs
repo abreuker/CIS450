@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/*
+ * Anna Breuker
+ * GameManager.cs
+ * Assignment 9 - State Pattern
+ * General game manager (also handles button methods)
+ */
 public class GameManager : MonoBehaviour
 {
     public PetAIStateManager petAIStateManager;

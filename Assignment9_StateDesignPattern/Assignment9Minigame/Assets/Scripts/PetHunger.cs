@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * PetHunger.cs
+ * Assignment 9 - State Pattern
+ * Script that manages the pet's hunger (and the ability to pet it.)
+ */
 public class PetHunger : MonoBehaviour
 {
     public float hunger;

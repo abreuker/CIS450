@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/*
+ * Anna Breuker
+ * IdleState.cs
+ * Assignment 9 - State Pattern
+ * State for the pet when it's idle
+ * (normal movement, normal bark, can be pet.)
+ */
 public class IdleState : PetState
 {
     PetAIStateManager petAIStateManager;

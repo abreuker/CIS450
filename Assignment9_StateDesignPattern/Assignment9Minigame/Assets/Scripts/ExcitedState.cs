@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+/*
+ * Anna Breuker
+ * ExcitedState.cs
+ * Assignment 9 - State Pattern
+ * State for the pet when it's excited (faster movement, happier barks.)
+ */
 public class ExcitedState : PetState
 {
     PetAIStateManager petAIStateManager;

@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/*
+ * Anna Breuker
+ * HungryState.cs
+ * Assignment 9 - State Pattern
+ * State for the pet when it's hungry 
+ * (only moves towards food, can't be pet, angry bark.)
+ */
 public class HungryState : PetState
 {
     PetAIStateManager petAIStateManager;

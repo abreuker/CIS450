@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Anna Breuker
+ * ProgressBar.cs
+ * Assignment 9 - State Pattern
+ * Code for the hunger bar.
+ */
 public class ProgressBar : MonoBehaviour
 {
     public int maximum;

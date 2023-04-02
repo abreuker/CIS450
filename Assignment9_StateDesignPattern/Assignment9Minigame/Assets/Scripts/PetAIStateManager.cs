@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * PetAIStateManager.cs
+ * Assignment 9 - State Pattern
+ * State manager for the Pet AI.
+ */
 public class PetAIStateManager : MonoBehaviour
 {
     public PetState idleState { get; set; }

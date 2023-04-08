@@ -17,11 +17,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gameObject.transform.position.y <= groundLevel)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && gameObject.transform.position.y <= groundLevel)
         {
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
-        if(Input.GetMouseButtonDown(1) && !isRolling && gameObject.transform.position.y <= groundLevel)
+        if((Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && !isRolling && gameObject.transform.position.y <= groundLevel)
         {
             StartCoroutine(Roll());
         }
@@ -43,5 +43,13 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         isRolling = false;
         animator.SetBool("isRolling", false);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle") || (collision.CompareTag("TallObstacle") && !isRolling))
+        {
+            GameManager.instance.Lose();
+        }
     }
 }

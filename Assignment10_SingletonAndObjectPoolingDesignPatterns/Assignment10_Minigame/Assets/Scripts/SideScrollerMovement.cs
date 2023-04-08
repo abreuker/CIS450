@@ -20,7 +20,7 @@ public class SideScrollerMovement : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.left * GameManager.instance.sideScrollerSpeed;
         }
-        if (gameObject.transform.position.x < obstacleBoundary)
+        if (gameObject.transform.position.x < obstacleBoundary || GameManager.instance.gamePaused)
         {
             ObjectPooler.instance.ReturnObjectToPool(poolerTag, gameObject);
         }

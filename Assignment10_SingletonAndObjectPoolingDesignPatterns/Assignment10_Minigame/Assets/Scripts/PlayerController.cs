@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public Vector2 jumpHeight;
     public float groundLevel;
+    public Animator animator;
+    public bool isRolling;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,27 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
+        if(Input.GetMouseButtonDown(1) && !isRolling && gameObject.transform.position.y <= groundLevel)
+        {
+            StartCoroutine(Roll());
+        }
+
+        if (gameObject.transform.position.y > groundLevel)
+        {
+            animator.SetBool("isJumping", true);
+        }
+        else
+        {
+            animator.SetBool("isJumping", false);
+        }
+    }
+
+    public IEnumerator Roll()
+    {
+        isRolling = true;
+        animator.SetBool("isRolling", true);
+        yield return new WaitForSeconds(.5f);
+        isRolling = false;
+        animator.SetBool("isRolling", false);
     }
 }

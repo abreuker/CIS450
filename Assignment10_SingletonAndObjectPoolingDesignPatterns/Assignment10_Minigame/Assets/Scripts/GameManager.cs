@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
     public static GameManager instance;
     public float sideScrollerSpeed = 20;
     public bool gamePaused;
+    public string[] obstacleTags = new string[] { "Short", "Medium", "Tall" };
 
     public Vector2 spawnPos;
     private void Awake()
@@ -40,8 +41,8 @@ public class GameManager : Singleton<GameManager>
     {
         while (!gamePaused)
         {
-            yield return new WaitForSeconds(Random.Range(2, 5));
-            ObjectPooler.instance.SpawnFromPool("Short", spawnPos, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(2, 4));
+            ObjectPooler.instance.SpawnFromPool(obstacleTags[Random.Range(0,2)], spawnPos, Quaternion.identity);
         }
     }
 }

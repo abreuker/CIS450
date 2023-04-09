@@ -1,6 +1,11 @@
 using UnityEngine;
 using System.Collections;
-
+/*
+ * Anna Breuker
+ * Singleton.cs
+ * Assignment 10 - Singleton and Object Pooling Patterns
+ * Code for all Singletons
+ */
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
     private static T instance;

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+/*
+ * Anna Breuker
+ * GameManager.cs
+ * Assignment 10 - Singleton and Object Pooling Patterns
+ * Singleton Game Manager that manages the menus, score, and spawning coroutines. 
+ */
 public class GameManager : Singleton<GameManager>
 {
     public static GameManager instance;

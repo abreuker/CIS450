@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * SideScrollerMovement.cs
+ * Assignment 10 - Singleton and Object Pooling Patterns
+ * Code for obstacles to be able to move.
+ */
 public class SideScrollerMovement : MonoBehaviour
 {
     public float obstacleBoundary;
     public string poolerTag;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

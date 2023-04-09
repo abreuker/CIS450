@@ -2,7 +2,12 @@ using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * ObjectPooler.cs
+ * Assignment 10 - Singleton and Object Pooling Patterns
+ * Singleton Object Pooler for spawning objects.
+ */
 public class ObjectPooler : Singleton<ObjectPooler>
 {
     public List<Pool> pools;

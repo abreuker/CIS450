@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * PlayerController.cs
+ * Assignment 10 - Singleton and Object Pooling Patterns
+ * Code that allows the player to jump, roll, and die.
+ */
 public class PlayerController : MonoBehaviour
 {
     public Vector2 jumpHeight;
     public float groundLevel;
     public Animator animator;
     public bool isRolling;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

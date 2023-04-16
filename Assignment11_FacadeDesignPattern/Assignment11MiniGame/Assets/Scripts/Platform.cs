@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+/*
+ * Anna Breuker
+ * Platform.cs
+ * Assignment 11 - Facade Pattern
+ * Code that manages the position and movement of both the platform and your guy.
+ */
 public class Platform : MonoBehaviour
 {
+    public Facade facade;
 
     public float speed;
     public float goalPos;
     public Animator convayorAnimator;
+
+    public PartManager partManager;
+    public ParticleSystem confetti;
     // Start is called before the first frame update
     void Start()
     {
         convayorAnimator = GameObject.FindGameObjectWithTag("convayor").GetComponent<Animator>();
+        partManager = GameObject.FindGameObjectWithTag("PartManager").GetComponent<PartManager>();
+
     }
 
     // Update is called once per frame
@@ -22,7 +33,7 @@ public class Platform : MonoBehaviour
         if (gameObject.transform.position.x < -15)
         {
             convayorAnimator.speed = 0;
-            Destroy(gameObject);
+            facade.ResetEverything();
         }
     }
 
@@ -42,6 +53,13 @@ public class Platform : MonoBehaviour
     public void Done()
     {
         goalPos = -20;
+        confetti.Play();
+    }
+
+    public void ResetPlatform()
+    { 
+        gameObject.transform.position = new Vector3(10, 0, 0);
+        goalPos = 0;
     }
 
 }

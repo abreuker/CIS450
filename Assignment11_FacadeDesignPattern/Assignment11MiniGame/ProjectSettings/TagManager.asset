@@ -6,6 +6,10 @@ TagManager:
   tags:
   - convayor
   - DespawnWall
+  - Screw
+  - Squid
+  - Purple
+  - PartManager
   layers:
   - Default
   - TransparentFX

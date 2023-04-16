@@ -16,14 +16,11 @@ public class Platform : MonoBehaviour
     public float goalPos;
     public Animator convayorAnimator;
 
-    public PartManager partManager;
     public ParticleSystem confetti;
     // Start is called before the first frame update
     void Start()
     {
         convayorAnimator = GameObject.FindGameObjectWithTag("convayor").GetComponent<Animator>();
-        partManager = GameObject.FindGameObjectWithTag("PartManager").GetComponent<PartManager>();
-
     }
 
     // Update is called once per frame
